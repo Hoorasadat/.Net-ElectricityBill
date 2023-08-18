@@ -35,7 +35,7 @@ namespace Lab_2
         }
 
         // constructor method
-        public Customer(string fstNm, string lstNm)
+        public Customer(string fstNm, string lstNm, decimal pwrUsg)
         {
             Guid uniqueId = Guid.NewGuid();
             int hashedValue = uniqueId.GetHashCode();
@@ -43,6 +43,7 @@ namespace Lab_2
             accountNo = hashedValue;
             firstName = fstNm;
             lastName = lstNm;
+            powerUsage = pwrUsg;
         }
 
         // calculate cost method

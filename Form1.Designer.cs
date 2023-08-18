@@ -97,7 +97,7 @@
             // 
             this.txtbFstNm.BackColor = System.Drawing.SystemColors.Info;
             this.txtbFstNm.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txtbFstNm.Location = new System.Drawing.Point(183, 56);
+            this.txtbFstNm.Location = new System.Drawing.Point(218, 49);
             this.txtbFstNm.Name = "txtbFstNm";
             this.txtbFstNm.Size = new System.Drawing.Size(156, 29);
             this.txtbFstNm.TabIndex = 4;
@@ -106,7 +106,7 @@
             // 
             this.txtbLstNm.BackColor = System.Drawing.SystemColors.Info;
             this.txtbLstNm.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txtbLstNm.Location = new System.Drawing.Point(183, 110);
+            this.txtbLstNm.Location = new System.Drawing.Point(218, 103);
             this.txtbLstNm.Name = "txtbLstNm";
             this.txtbLstNm.Size = new System.Drawing.Size(156, 29);
             this.txtbLstNm.TabIndex = 5;
@@ -127,7 +127,7 @@
             // 
             this.txtbPwrUsg.BackColor = System.Drawing.SystemColors.Info;
             this.txtbPwrUsg.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txtbPwrUsg.Location = new System.Drawing.Point(183, 164);
+            this.txtbPwrUsg.Location = new System.Drawing.Point(218, 157);
             this.txtbPwrUsg.Name = "txtbPwrUsg";
             this.txtbPwrUsg.Size = new System.Drawing.Size(156, 29);
             this.txtbPwrUsg.TabIndex = 8;
@@ -140,9 +140,9 @@
             this.label4.Location = new System.Drawing.Point(18, 151);
             this.label4.Name = "label4";
             this.label4.Padding = new System.Windows.Forms.Padding(9, 9, 9, 9);
-            this.label4.Size = new System.Drawing.Size(156, 39);
+            this.label4.Size = new System.Drawing.Size(199, 39);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Customer Usage:";
+            this.label4.Text = "Customer Usage(kwh):";
             // 
             // groupBox1
             // 

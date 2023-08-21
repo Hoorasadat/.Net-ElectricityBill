@@ -34,11 +34,20 @@ namespace Lab_2
             get { return billAmount; }
         }
 
-        // constructor method
+        // 1st constructor method
+        public Customer(int accNo, string fstNm, string lstNm, decimal pwrUsg)
+        {
+            accountNo = accNo;
+            firstName = fstNm;
+            lastName = lstNm;
+            powerUsage = pwrUsg;
+        }
+
+        // 2nd constructor method
         public Customer(string fstNm, string lstNm, decimal pwrUsg)
         {
             Guid uniqueId = Guid.NewGuid();
-            int hashedValue = uniqueId.GetHashCode();
+            int hashedValue = Math.Abs(uniqueId.GetHashCode());
 
             accountNo = hashedValue;
             firstName = fstNm;
@@ -53,6 +62,8 @@ namespace Lab_2
 
             powerCost = kwhCost * powerUsage + adminFee;
 
+            billAmount = powerCost;
+
             return powerCost;
         }
 
@@ -62,6 +73,10 @@ namespace Lab_2
             return $"{firstName} {lastName} with account no. {accountNo} has a bill of {billString}";
         }
 
-
+        public string CreateCustomer()
+        {
+            string billString = CalculateCharge().ToString("C");
+            return $"First Name: {firstName}, Last Name: {lastName}, Account #: {accountNo}, Bill: ${billString}";
+        }
     }
 }

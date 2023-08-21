@@ -38,8 +38,24 @@
             this.txtbPwrUsg = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtbAccNo = new System.Windows.Forms.TextBox();
+            this.crtBtn = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.deleteBtn = new System.Windows.Forms.Button();
+            this.lstBxCstm = new System.Windows.Forms.ListBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtbAvgBill = new System.Windows.Forms.TextBox();
+            this.txtbNoCstm = new System.Windows.Forms.TextBox();
+            this.txtbTtlUsg = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -61,7 +77,7 @@
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label1.Location = new System.Drawing.Point(158, 0);
+            this.label1.Location = new System.Drawing.Point(359, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(9);
@@ -74,7 +90,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.SystemColors.Window;
             this.label2.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label2.Location = new System.Drawing.Point(18, 43);
+            this.label2.Location = new System.Drawing.Point(13, 101);
             this.label2.Name = "label2";
             this.label2.Padding = new System.Windows.Forms.Padding(9);
             this.label2.Size = new System.Drawing.Size(114, 39);
@@ -86,7 +102,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.SystemColors.Window;
             this.label3.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label3.Location = new System.Drawing.Point(18, 97);
+            this.label3.Location = new System.Drawing.Point(13, 152);
             this.label3.Name = "label3";
             this.label3.Padding = new System.Windows.Forms.Padding(9);
             this.label3.Size = new System.Drawing.Size(112, 39);
@@ -97,28 +113,28 @@
             // 
             this.txtbFstNm.BackColor = System.Drawing.SystemColors.Info;
             this.txtbFstNm.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txtbFstNm.Location = new System.Drawing.Point(218, 49);
+            this.txtbFstNm.Location = new System.Drawing.Point(217, 107);
             this.txtbFstNm.Name = "txtbFstNm";
             this.txtbFstNm.Size = new System.Drawing.Size(156, 29);
-            this.txtbFstNm.TabIndex = 4;
+            this.txtbFstNm.TabIndex = 2;
             // 
             // txtbLstNm
             // 
             this.txtbLstNm.BackColor = System.Drawing.SystemColors.Info;
             this.txtbLstNm.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txtbLstNm.Location = new System.Drawing.Point(218, 103);
+            this.txtbLstNm.Location = new System.Drawing.Point(217, 158);
             this.txtbLstNm.Name = "txtbLstNm";
             this.txtbLstNm.Size = new System.Drawing.Size(156, 29);
-            this.txtbLstNm.TabIndex = 5;
+            this.txtbLstNm.TabIndex = 3;
             // 
             // addBtn
             // 
             this.addBtn.BackColor = System.Drawing.SystemColors.Info;
             this.addBtn.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.addBtn.Location = new System.Drawing.Point(428, 97);
+            this.addBtn.Location = new System.Drawing.Point(395, 173);
             this.addBtn.Name = "addBtn";
-            this.addBtn.Padding = new System.Windows.Forms.Padding(9);
-            this.addBtn.Size = new System.Drawing.Size(148, 45);
+            this.addBtn.Padding = new System.Windows.Forms.Padding(5);
+            this.addBtn.Size = new System.Drawing.Size(155, 45);
             this.addBtn.TabIndex = 6;
             this.addBtn.Text = "Add Customer";
             this.addBtn.UseVisualStyleBackColor = false;
@@ -128,10 +144,10 @@
             // 
             this.txtbPwrUsg.BackColor = System.Drawing.SystemColors.Info;
             this.txtbPwrUsg.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txtbPwrUsg.Location = new System.Drawing.Point(218, 157);
+            this.txtbPwrUsg.Location = new System.Drawing.Point(217, 209);
             this.txtbPwrUsg.Name = "txtbPwrUsg";
             this.txtbPwrUsg.Size = new System.Drawing.Size(156, 29);
-            this.txtbPwrUsg.TabIndex = 8;
+            this.txtbPwrUsg.TabIndex = 4;
             this.txtbPwrUsg.TextChanged += new System.EventHandler(this.txtbPwrUsg_TextChanged);
             // 
             // label4
@@ -139,7 +155,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.SystemColors.Window;
             this.label4.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label4.Location = new System.Drawing.Point(18, 151);
+            this.label4.Location = new System.Drawing.Point(13, 203);
             this.label4.Name = "label4";
             this.label4.Padding = new System.Windows.Forms.Padding(9);
             this.label4.Size = new System.Drawing.Size(199, 39);
@@ -149,19 +165,181 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.txtbAccNo);
+            this.groupBox1.Controls.Add(this.crtBtn);
             this.groupBox1.Controls.Add(this.addBtn);
             this.groupBox1.Controls.Add(this.txtbPwrUsg);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtbFstNm);
             this.groupBox1.Controls.Add(this.txtbLstNm);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(-5, 149);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(618, 217);
+            this.groupBox1.Size = new System.Drawing.Size(578, 265);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add a new Customer:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.SystemColors.Window;
+            this.label8.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label8.Location = new System.Drawing.Point(13, 50);
+            this.label8.Name = "label8";
+            this.label8.Padding = new System.Windows.Forms.Padding(9);
+            this.label8.Size = new System.Drawing.Size(188, 39);
+            this.label8.TabIndex = 10;
+            this.label8.Text = "Account # (optional):";
+            // 
+            // txtbAccNo
+            // 
+            this.txtbAccNo.BackColor = System.Drawing.SystemColors.Info;
+            this.txtbAccNo.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.txtbAccNo.Location = new System.Drawing.Point(217, 56);
+            this.txtbAccNo.Name = "txtbAccNo";
+            this.txtbAccNo.Size = new System.Drawing.Size(156, 29);
+            this.txtbAccNo.TabIndex = 1;
+            this.txtbAccNo.TextChanged += new System.EventHandler(this.txtbAccNo_TextChanged);
+            // 
+            // crtBtn
+            // 
+            this.crtBtn.BackColor = System.Drawing.SystemColors.Info;
+            this.crtBtn.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.crtBtn.Location = new System.Drawing.Point(395, 109);
+            this.crtBtn.Name = "crtBtn";
+            this.crtBtn.Padding = new System.Windows.Forms.Padding(5);
+            this.crtBtn.Size = new System.Drawing.Size(155, 45);
+            this.crtBtn.TabIndex = 8;
+            this.crtBtn.Text = "Check Customer";
+            this.crtBtn.UseVisualStyleBackColor = false;
+            this.crtBtn.Click += new System.EventHandler(this.crtBtn_Click_1);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.SystemColors.Window;
+            this.groupBox2.Controls.Add(this.button2);
+            this.groupBox2.Controls.Add(this.deleteBtn);
+            this.groupBox2.Controls.Add(this.lstBxCstm);
+            this.groupBox2.Location = new System.Drawing.Point(611, 149);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(493, 554);
+            this.groupBox2.TabIndex = 10;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "List of Customers";
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.Info;
+            this.button2.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.button2.Location = new System.Drawing.Point(333, 497);
+            this.button2.Name = "button2";
+            this.button2.Padding = new System.Windows.Forms.Padding(5);
+            this.button2.Size = new System.Drawing.Size(148, 45);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "Remove Customer";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // deleteBtn
+            // 
+            this.deleteBtn.BackColor = System.Drawing.SystemColors.Info;
+            this.deleteBtn.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.deleteBtn.Location = new System.Drawing.Point(17, 498);
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.Padding = new System.Windows.Forms.Padding(5);
+            this.deleteBtn.Size = new System.Drawing.Size(148, 45);
+            this.deleteBtn.TabIndex = 7;
+            this.deleteBtn.Text = "Add Customer";
+            this.deleteBtn.UseVisualStyleBackColor = false;
+            // 
+            // lstBxCstm
+            // 
+            this.lstBxCstm.BackColor = System.Drawing.SystemColors.Info;
+            this.lstBxCstm.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.lstBxCstm.FormattingEnabled = true;
+            this.lstBxCstm.ItemHeight = 21;
+            this.lstBxCstm.Location = new System.Drawing.Point(17, 43);
+            this.lstBxCstm.Name = "lstBxCstm";
+            this.lstBxCstm.Size = new System.Drawing.Size(464, 445);
+            this.lstBxCstm.TabIndex = 0;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.BackColor = System.Drawing.SystemColors.Window;
+            this.groupBox3.Controls.Add(this.txtbAvgBill);
+            this.groupBox3.Controls.Add(this.txtbNoCstm);
+            this.groupBox3.Controls.Add(this.txtbTtlUsg);
+            this.groupBox3.Controls.Add(this.label7);
+            this.groupBox3.Controls.Add(this.label6);
+            this.groupBox3.Controls.Add(this.label5);
+            this.groupBox3.Location = new System.Drawing.Point(0, 494);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(573, 209);
+            this.groupBox3.TabIndex = 11;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Statistics";
+            // 
+            // txtbAvgBill
+            // 
+            this.txtbAvgBill.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtbAvgBill.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.txtbAvgBill.Location = new System.Drawing.Point(389, 152);
+            this.txtbAvgBill.Name = "txtbAvgBill";
+            this.txtbAvgBill.ReadOnly = true;
+            this.txtbAvgBill.Size = new System.Drawing.Size(156, 29);
+            this.txtbAvgBill.TabIndex = 11;
+            // 
+            // txtbNoCstm
+            // 
+            this.txtbNoCstm.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtbNoCstm.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.txtbNoCstm.Location = new System.Drawing.Point(389, 44);
+            this.txtbNoCstm.Name = "txtbNoCstm";
+            this.txtbNoCstm.ReadOnly = true;
+            this.txtbNoCstm.Size = new System.Drawing.Size(156, 29);
+            this.txtbNoCstm.TabIndex = 9;
+            // 
+            // txtbTtlUsg
+            // 
+            this.txtbTtlUsg.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtbTtlUsg.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.txtbTtlUsg.Location = new System.Drawing.Point(389, 98);
+            this.txtbTtlUsg.Name = "txtbTtlUsg";
+            this.txtbTtlUsg.ReadOnly = true;
+            this.txtbTtlUsg.Size = new System.Drawing.Size(156, 29);
+            this.txtbTtlUsg.TabIndex = 10;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label7.Location = new System.Drawing.Point(17, 153);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(161, 21);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "Average bill amount:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label6.Location = new System.Drawing.Point(17, 100);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(215, 21);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "Total number of kWh used:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label5.Location = new System.Drawing.Point(17, 47);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(259, 21);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Number of customers processed:";
             // 
             // Form1
             // 
@@ -169,7 +347,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.BackgroundImage = global::Lab_2.Properties.Resources.blurBG;
-            this.ClientSize = new System.Drawing.Size(612, 627);
+            this.ClientSize = new System.Drawing.Size(1104, 731);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
@@ -177,11 +357,14 @@
             this.ForeColor = System.Drawing.SystemColors.Info;
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Electricity Co.";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -199,6 +382,20 @@
         private System.Windows.Forms.TextBox txtbPwrUsg;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button deleteBtn;
+        private System.Windows.Forms.ListBox lstBxCstm;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.TextBox txtbAvgBill;
+        private System.Windows.Forms.TextBox txtbNoCstm;
+        private System.Windows.Forms.TextBox txtbTtlUsg;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button crtBtn;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtbAccNo;
     }
 }
 

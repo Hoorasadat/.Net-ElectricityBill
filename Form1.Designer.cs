@@ -38,12 +38,13 @@
             this.txtbPwrUsg = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.resetBtn = new System.Windows.Forms.Button();
+            this.exitBtn = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.txtbAccNo = new System.Windows.Forms.TextBox();
             this.crtBtn = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.deleteBtn = new System.Windows.Forms.Button();
+            this.removeBtn = new System.Windows.Forms.Button();
             this.lstBxCstm = new System.Windows.Forms.ListBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtbAvgBill = new System.Windows.Forms.TextBox();
@@ -129,16 +130,10 @@
             // 
             // addBtn
             // 
-            this.addBtn.BackColor = System.Drawing.SystemColors.Info;
-            this.addBtn.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.addBtn.Location = new System.Drawing.Point(395, 173);
+            this.addBtn.Location = new System.Drawing.Point(0, 0);
             this.addBtn.Name = "addBtn";
-            this.addBtn.Padding = new System.Windows.Forms.Padding(5);
-            this.addBtn.Size = new System.Drawing.Size(155, 45);
-            this.addBtn.TabIndex = 6;
-            this.addBtn.Text = "Add Customer";
-            this.addBtn.UseVisualStyleBackColor = false;
-            this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
+            this.addBtn.Size = new System.Drawing.Size(75, 23);
+            this.addBtn.TabIndex = 13;
             // 
             // txtbPwrUsg
             // 
@@ -165,6 +160,8 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.Window;
+            this.groupBox1.Controls.Add(this.resetBtn);
+            this.groupBox1.Controls.Add(this.exitBtn);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.txtbAccNo);
             this.groupBox1.Controls.Add(this.crtBtn);
@@ -177,10 +174,37 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(-5, 149);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(578, 265);
+            this.groupBox1.Size = new System.Drawing.Size(563, 265);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add a new Customer:";
+            // 
+            // resetBtn
+            // 
+            this.resetBtn.BackColor = System.Drawing.SystemColors.Info;
+            this.resetBtn.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.resetBtn.Location = new System.Drawing.Point(394, 118);
+            this.resetBtn.Name = "resetBtn";
+            this.resetBtn.Padding = new System.Windows.Forms.Padding(5);
+            this.resetBtn.Size = new System.Drawing.Size(155, 45);
+            this.resetBtn.TabIndex = 12;
+            this.resetBtn.Text = "Reset";
+            this.resetBtn.UseVisualStyleBackColor = false;
+            this.resetBtn.Click += new System.EventHandler(this.resetBtn_Click);
+            // 
+            // exitBtn
+            // 
+            this.exitBtn.BackColor = System.Drawing.SystemColors.Info;
+            this.exitBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.exitBtn.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.exitBtn.Location = new System.Drawing.Point(394, 180);
+            this.exitBtn.Name = "exitBtn";
+            this.exitBtn.Padding = new System.Windows.Forms.Padding(5);
+            this.exitBtn.Size = new System.Drawing.Size(155, 45);
+            this.exitBtn.TabIndex = 11;
+            this.exitBtn.Text = "Exit App";
+            this.exitBtn.UseVisualStyleBackColor = false;
+            this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
             // 
             // label8
             // 
@@ -208,51 +232,39 @@
             // 
             this.crtBtn.BackColor = System.Drawing.SystemColors.Info;
             this.crtBtn.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.crtBtn.Location = new System.Drawing.Point(395, 109);
+            this.crtBtn.Location = new System.Drawing.Point(394, 56);
             this.crtBtn.Name = "crtBtn";
             this.crtBtn.Padding = new System.Windows.Forms.Padding(5);
             this.crtBtn.Size = new System.Drawing.Size(155, 45);
-            this.crtBtn.TabIndex = 8;
-            this.crtBtn.Text = "Check Customer";
+            this.crtBtn.TabIndex = 5;
+            this.crtBtn.Text = "Add Customer";
             this.crtBtn.UseVisualStyleBackColor = false;
             this.crtBtn.Click += new System.EventHandler(this.crtBtn_Click_1);
             // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.Window;
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.deleteBtn);
+            this.groupBox2.Controls.Add(this.removeBtn);
             this.groupBox2.Controls.Add(this.lstBxCstm);
-            this.groupBox2.Location = new System.Drawing.Point(611, 149);
+            this.groupBox2.Location = new System.Drawing.Point(597, 149);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(493, 554);
+            this.groupBox2.Size = new System.Drawing.Size(507, 554);
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "List of Customers";
             // 
-            // button2
+            // removeBtn
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.Info;
-            this.button2.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.button2.Location = new System.Drawing.Point(333, 497);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(5);
-            this.button2.Size = new System.Drawing.Size(148, 45);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Remove Customer";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // deleteBtn
-            // 
-            this.deleteBtn.BackColor = System.Drawing.SystemColors.Info;
-            this.deleteBtn.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.deleteBtn.Location = new System.Drawing.Point(17, 498);
-            this.deleteBtn.Name = "deleteBtn";
-            this.deleteBtn.Padding = new System.Windows.Forms.Padding(5);
-            this.deleteBtn.Size = new System.Drawing.Size(148, 45);
-            this.deleteBtn.TabIndex = 7;
-            this.deleteBtn.Text = "Add Customer";
-            this.deleteBtn.UseVisualStyleBackColor = false;
+            this.removeBtn.BackColor = System.Drawing.SystemColors.Info;
+            this.removeBtn.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.removeBtn.Location = new System.Drawing.Point(202, 499);
+            this.removeBtn.Name = "removeBtn";
+            this.removeBtn.Padding = new System.Windows.Forms.Padding(5);
+            this.removeBtn.Size = new System.Drawing.Size(148, 45);
+            this.removeBtn.TabIndex = 8;
+            this.removeBtn.Text = "Remove Customer";
+            this.removeBtn.UseVisualStyleBackColor = false;
+            this.removeBtn.Click += new System.EventHandler(this.removeBtn_Click);
             // 
             // lstBxCstm
             // 
@@ -262,7 +274,7 @@
             this.lstBxCstm.ItemHeight = 21;
             this.lstBxCstm.Location = new System.Drawing.Point(17, 43);
             this.lstBxCstm.Name = "lstBxCstm";
-            this.lstBxCstm.Size = new System.Drawing.Size(464, 445);
+            this.lstBxCstm.Size = new System.Drawing.Size(478, 445);
             this.lstBxCstm.TabIndex = 0;
             // 
             // groupBox3
@@ -276,7 +288,7 @@
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Location = new System.Drawing.Point(0, 494);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(573, 209);
+            this.groupBox3.Size = new System.Drawing.Size(558, 209);
             this.groupBox3.TabIndex = 11;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Statistics";
@@ -347,6 +359,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.BackgroundImage = global::Lab_2.Properties.Resources.blurBG;
+            this.CancelButton = this.exitBtn;
             this.ClientSize = new System.Drawing.Size(1104, 731);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -383,9 +396,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button deleteBtn;
         private System.Windows.Forms.ListBox lstBxCstm;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button removeBtn;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox txtbAvgBill;
         private System.Windows.Forms.TextBox txtbNoCstm;
@@ -396,6 +408,8 @@
         private System.Windows.Forms.Button crtBtn;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtbAccNo;
+        private System.Windows.Forms.Button exitBtn;
+        private System.Windows.Forms.Button resetBtn;
     }
 }
 

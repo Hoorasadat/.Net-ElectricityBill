@@ -15,7 +15,7 @@ namespace Lab_2
         decimal adminFee = 12;
         decimal kwhCost = 0.07m;
 
-        private decimal powerUsage;
+        private decimal powerUsage = 0;
         public decimal PowerUsage
         {
             get { return powerUsage; }

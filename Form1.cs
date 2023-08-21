@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,12 +14,13 @@ namespace Lab_2
 {
     public partial class Form1 : Form
     {
-        List<Customer> customerList = new List<Customer>();
+        List<Customer> customerList;
         Customer currentCustomer;
 
         public Form1()
         {
             InitializeComponent();
+            customerList = new List<Customer>();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -44,14 +46,12 @@ namespace Lab_2
             }
 
             MessageBox.Show(currentCustomer.ToString());
-        }
-
-        private void addBtn_Click(object sender, EventArgs e)
-        {
+        
             customerList.Add(currentCustomer);
             lstBxCstm.Items.Add(currentCustomer.CreateCustomer());
             updateStatistics();
-
+            txtbAccNo.Focus();
+            ResetFields();
         }
 
         private void txtbPwrUsg_TextChanged(object sender, EventArgs e)
@@ -77,7 +77,11 @@ namespace Lab_2
             }
 
             txtbTtlUsg.Text = totalUsage.ToString("C");
-            txtbAvgBill.Text = (totalBillAmount / noOfCustomers).ToString("C");
+            if (customerList.Count > 0)
+                txtbAvgBill.Text = (totalBillAmount / noOfCustomers).ToString("C");
+            else
+                txtbAvgBill.Text = 0.ToString();
+
         }
 
         private void txtbAccNo_TextChanged(object sender, EventArgs e)
@@ -89,6 +93,34 @@ namespace Lab_2
             }
         }
 
-        
+        private void exitBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void removeBtn_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you Sure?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                int index = lstBxCstm.SelectedIndex;
+                lstBxCstm.Items.RemoveAt(index);
+                customerList.RemoveAt(index);
+                updateStatistics();
+            }
+
+        }
+
+        private void resetBtn_Click(object sender, EventArgs e)
+        {
+            ResetFields();
+        }
+
+        private void ResetFields()
+        {
+            txtbAccNo.Text = "";
+            txtbFstNm.Text = "";
+            txtbLstNm.Text = "";
+            txtbPwrUsg.Text = "";
+        }
     }
 }

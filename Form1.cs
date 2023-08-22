@@ -14,54 +14,103 @@ namespace Lab_2
 {
     public partial class Form1 : Form
     {
+
+        // ------------------------------------- Variables: -------------------------------------
+
         List<Customer> customerList;
         Customer currentCustomer;
+
+
+        // ------------------------------- Initializing the form: -------------------------------
 
         public Form1()
         {
             InitializeComponent();
+
             customerList = new List<Customer>();
+
+            ResetStatistics();
         }
+
+
+        // ---------------------------------- Loading the form: ----------------------------------
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
         }
 
-        private void crtBtn_Click_1(object sender, EventArgs e)
+
+        // ------------------------ Create and add a cutomer to the list: ------------------------
+
+        private void addCrtBtn_Click(object sender, EventArgs e)
         {
             string accountNo = txtbAccNo.Text;
             string fName = txtbFstNm.Text;
             string lName = txtbLstNm.Text;
+
+        // --------------- Getting power usage amount and round it in the textbox: ---------------
+
             decimal powerUsg = Math.Round(Convert.ToDecimal(txtbPwrUsg.Text), 2);
 
             txtbPwrUsg.Text = powerUsg.ToString();
+
+        // --------------- Creating a new customer based on the filled textboxes: ---------------
 
             if (accountNo == "")
                 currentCustomer = new Customer(fName, lName, powerUsg);
             else
             {
                 int accNo = Convert.ToInt32(accountNo);
-                currentCustomer = new Customer(accNo, fName, lName, powerUsg);
+                bool isIdUnique = checkUniqueness(accNo);
+                if (isIdUnique)
+                    currentCustomer = new Customer(accNo, fName, lName, powerUsg);
+                else
+                {
+                    MessageBox.Show("The account number you entered is already used for a customer!");
+                    return;
+                }
             }
 
+        // ----------------------- Showing the new customer in a Showbox: -----------------------
+
             MessageBox.Show(currentCustomer.ToString());
-        
+
+        // ----------------- Adding the new customer into the listbox and list: -----------------
+            
             customerList.Add(currentCustomer);
             lstBxCstm.Items.Add(currentCustomer.CreateCustomer());
+
+        // --------------------- Updating statistics and reseting the form: ---------------------
+
             updateStatistics();
             txtbAccNo.Focus();
             ResetFields();
         }
 
+
+        // ------------------- Check if the provided account number is unique: -------------------
+
+        private bool checkUniqueness(int number)
+        {
+            if (customerList.Find(x => x.AccountNo == number) != null)
+                return false;
+            else return true;
+        }
+
+
+        // ---------------- Check if the provided power usage is positive decimal: ----------------
+
         private void txtbPwrUsg_TextChanged(object sender, EventArgs e)
         {
-            if(System.Text.RegularExpressions.Regex.IsMatch(txtbPwrUsg.Text, "[^0-9.]"))
+            if (System.Text.RegularExpressions.Regex.IsMatch(txtbPwrUsg.Text, "[^0-9.]"))
             {
                 MessageBox.Show("Please enter only numbers.");
                 txtbPwrUsg.Text = txtbPwrUsg.Text.Remove(txtbPwrUsg.Text.Length - 1);
             }
         }
+
+
+        // ------------------------------- Update statistics method: -------------------------------
 
         private void updateStatistics()
         {
@@ -76,13 +125,15 @@ namespace Lab_2
                 totalBillAmount += customerList[i].BillAmount;
             }
 
-            txtbTtlUsg.Text = totalUsage.ToString("C");
+            txtbTtlUsg.Text = totalUsage.ToString();
             if (customerList.Count > 0)
                 txtbAvgBill.Text = (totalBillAmount / noOfCustomers).ToString("C");
             else
-                txtbAvgBill.Text = 0.ToString();
-
+                txtbAvgBill.Text = 0.ToString("C");
         }
+
+
+        // --------------- Check if the provided account number is positive integer: ---------------
 
         private void txtbAccNo_TextChanged(object sender, EventArgs e)
         {
@@ -93,13 +144,23 @@ namespace Lab_2
             }
         }
 
+
+        // ------------------------------------- Exit the app: -------------------------------------
+
         private void exitBtn_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+
+        // ---------------------------- Remove a customer from the list: ----------------------------
+
         private void removeBtn_Click(object sender, EventArgs e)
         {
+            // ----------------- First check if the customer is sure about removing: -----------------
+
+            // ------------- Creating a custom MessageBox with titile, text, and buttons: -------------
+
             if (MessageBox.Show("Are you Sure?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 int index = lstBxCstm.SelectedIndex;
@@ -107,13 +168,18 @@ namespace Lab_2
                 customerList.RemoveAt(index);
                 updateStatistics();
             }
-
         }
+
+
+        // ------------------------------------- Reset button: -------------------------------------
 
         private void resetBtn_Click(object sender, EventArgs e)
         {
             ResetFields();
         }
+
+
+        // ------------------------------------- Reset method: -------------------------------------
 
         private void ResetFields()
         {
@@ -122,5 +188,16 @@ namespace Lab_2
             txtbLstNm.Text = "";
             txtbPwrUsg.Text = "";
         }
+
+
+        // -------------------------------- Reset Statistics method: --------------------------------
+
+        private void ResetStatistics()
+        {
+            txtbNoCstm.Text = "0";
+            txtbTtlUsg.Text = "0";
+            txtbAvgBill.Text = 0.ToString("C");
+        }
+
     }
 }

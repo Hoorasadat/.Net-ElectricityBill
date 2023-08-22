@@ -34,7 +34,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtbFstNm = new System.Windows.Forms.TextBox();
             this.txtbLstNm = new System.Windows.Forms.TextBox();
-            this.addBtn = new System.Windows.Forms.Button();
             this.txtbPwrUsg = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -42,7 +41,7 @@
             this.exitBtn = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.txtbAccNo = new System.Windows.Forms.TextBox();
-            this.crtBtn = new System.Windows.Forms.Button();
+            this.addCrtBtn = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.removeBtn = new System.Windows.Forms.Button();
             this.lstBxCstm = new System.Windows.Forms.ListBox();
@@ -78,7 +77,7 @@
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label1.Location = new System.Drawing.Point(359, 0);
+            this.label1.Location = new System.Drawing.Point(389, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(9);
@@ -128,13 +127,6 @@
             this.txtbLstNm.Size = new System.Drawing.Size(156, 29);
             this.txtbLstNm.TabIndex = 3;
             // 
-            // addBtn
-            // 
-            this.addBtn.Location = new System.Drawing.Point(0, 0);
-            this.addBtn.Name = "addBtn";
-            this.addBtn.Size = new System.Drawing.Size(75, 23);
-            this.addBtn.TabIndex = 13;
-            // 
             // txtbPwrUsg
             // 
             this.txtbPwrUsg.BackColor = System.Drawing.SystemColors.Info;
@@ -164,8 +156,7 @@
             this.groupBox1.Controls.Add(this.exitBtn);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.txtbAccNo);
-            this.groupBox1.Controls.Add(this.crtBtn);
-            this.groupBox1.Controls.Add(this.addBtn);
+            this.groupBox1.Controls.Add(this.addCrtBtn);
             this.groupBox1.Controls.Add(this.txtbPwrUsg);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtbFstNm);
@@ -188,7 +179,7 @@
             this.resetBtn.Padding = new System.Windows.Forms.Padding(5);
             this.resetBtn.Size = new System.Drawing.Size(155, 45);
             this.resetBtn.TabIndex = 12;
-            this.resetBtn.Text = "Reset";
+            this.resetBtn.Text = "Reset Fields";
             this.resetBtn.UseVisualStyleBackColor = false;
             this.resetBtn.Click += new System.EventHandler(this.resetBtn_Click);
             // 
@@ -228,27 +219,27 @@
             this.txtbAccNo.TabIndex = 1;
             this.txtbAccNo.TextChanged += new System.EventHandler(this.txtbAccNo_TextChanged);
             // 
-            // crtBtn
+            // addCrtBtn
             // 
-            this.crtBtn.BackColor = System.Drawing.SystemColors.Info;
-            this.crtBtn.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.crtBtn.Location = new System.Drawing.Point(394, 56);
-            this.crtBtn.Name = "crtBtn";
-            this.crtBtn.Padding = new System.Windows.Forms.Padding(5);
-            this.crtBtn.Size = new System.Drawing.Size(155, 45);
-            this.crtBtn.TabIndex = 5;
-            this.crtBtn.Text = "Add Customer";
-            this.crtBtn.UseVisualStyleBackColor = false;
-            this.crtBtn.Click += new System.EventHandler(this.crtBtn_Click_1);
+            this.addCrtBtn.BackColor = System.Drawing.SystemColors.Info;
+            this.addCrtBtn.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.addCrtBtn.Location = new System.Drawing.Point(394, 56);
+            this.addCrtBtn.Name = "addCrtBtn";
+            this.addCrtBtn.Padding = new System.Windows.Forms.Padding(5);
+            this.addCrtBtn.Size = new System.Drawing.Size(155, 45);
+            this.addCrtBtn.TabIndex = 5;
+            this.addCrtBtn.Text = "Add Customer";
+            this.addCrtBtn.UseVisualStyleBackColor = false;
+            this.addCrtBtn.Click += new System.EventHandler(this.addCrtBtn_Click);
             // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.Window;
             this.groupBox2.Controls.Add(this.removeBtn);
             this.groupBox2.Controls.Add(this.lstBxCstm);
-            this.groupBox2.Location = new System.Drawing.Point(597, 149);
+            this.groupBox2.Location = new System.Drawing.Point(596, 149);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(507, 554);
+            this.groupBox2.Size = new System.Drawing.Size(603, 554);
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "List of Customers";
@@ -257,10 +248,10 @@
             // 
             this.removeBtn.BackColor = System.Drawing.SystemColors.Info;
             this.removeBtn.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.removeBtn.Location = new System.Drawing.Point(202, 499);
+            this.removeBtn.Location = new System.Drawing.Point(219, 497);
             this.removeBtn.Name = "removeBtn";
             this.removeBtn.Padding = new System.Windows.Forms.Padding(5);
-            this.removeBtn.Size = new System.Drawing.Size(148, 45);
+            this.removeBtn.Size = new System.Drawing.Size(171, 45);
             this.removeBtn.TabIndex = 8;
             this.removeBtn.Text = "Remove Customer";
             this.removeBtn.UseVisualStyleBackColor = false;
@@ -274,7 +265,7 @@
             this.lstBxCstm.ItemHeight = 21;
             this.lstBxCstm.Location = new System.Drawing.Point(17, 43);
             this.lstBxCstm.Name = "lstBxCstm";
-            this.lstBxCstm.Size = new System.Drawing.Size(478, 445);
+            this.lstBxCstm.Size = new System.Drawing.Size(573, 445);
             this.lstBxCstm.TabIndex = 0;
             // 
             // groupBox3
@@ -329,9 +320,9 @@
             this.label7.ForeColor = System.Drawing.SystemColors.Highlight;
             this.label7.Location = new System.Drawing.Point(17, 153);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(161, 21);
+            this.label7.Size = new System.Drawing.Size(187, 21);
             this.label7.TabIndex = 2;
-            this.label7.Text = "Average bill amount:";
+            this.label7.Text = "Average bill amount ($):";
             // 
             // label6
             // 
@@ -360,7 +351,7 @@
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.BackgroundImage = global::Lab_2.Properties.Resources.blurBG;
             this.CancelButton = this.exitBtn;
-            this.ClientSize = new System.Drawing.Size(1104, 731);
+            this.ClientSize = new System.Drawing.Size(1199, 731);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -391,7 +382,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtbFstNm;
         private System.Windows.Forms.TextBox txtbLstNm;
-        private System.Windows.Forms.Button addBtn;
         private System.Windows.Forms.TextBox txtbPwrUsg;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -405,7 +395,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button crtBtn;
+        private System.Windows.Forms.Button addCrtBtn;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtbAccNo;
         private System.Windows.Forms.Button exitBtn;

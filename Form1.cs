@@ -47,44 +47,52 @@ namespace Lab_2
             string accountNo = txtbAccNo.Text;
             string fName = txtbFstNm.Text;
             string lName = txtbLstNm.Text;
+            string pwUsg = txtbPwrUsg.Text;
 
-        // --------------- Getting power usage amount and round it in the textbox: ---------------
-
-            decimal powerUsg = Math.Round(Convert.ToDecimal(txtbPwrUsg.Text), 2);
-
-            txtbPwrUsg.Text = powerUsg.ToString();
-
-        // --------------- Creating a new customer based on the filled textboxes: ---------------
-
-            if (accountNo == "")
-                currentCustomer = new Customer(fName, lName, powerUsg);
+            if (fName == "" || lName == "" || pwUsg == "")
+            {
+                MessageBox.Show("You have to enter First Name, Last Name, and Power Usage!");
+            }
             else
             {
-                int accNo = Convert.ToInt32(accountNo);
-                bool isIdUnique = checkUniqueness(accNo);
-                if (isIdUnique)
-                    currentCustomer = new Customer(accNo, fName, lName, powerUsg);
+                // --------------- Getting power usage amount and round it in the textbox: ---------------
+
+                decimal powerUsg = Math.Round(Convert.ToDecimal(pwUsg), 2);
+
+                txtbPwrUsg.Text = powerUsg.ToString();
+
+                // --------------- Creating a new customer based on the filled textboxes: ---------------
+
+                if (accountNo == "")
+                    currentCustomer = new Customer(fName, lName, powerUsg);
                 else
                 {
-                    MessageBox.Show("The account number you entered is already used for a customer!");
-                    return;
+                    int accNo = Convert.ToInt32(accountNo);
+                    bool isIdUnique = checkUniqueness(accNo);
+                    if (isIdUnique)
+                        currentCustomer = new Customer(accNo, fName, lName, powerUsg);
+                    else
+                    {
+                        MessageBox.Show("The account number you entered is already used for a customer!");
+                        return;
+                    }
                 }
+
+                // ----------------------- Showing the new customer in a Showbox: -----------------------
+
+                MessageBox.Show(currentCustomer.ToString());
+
+                // ----------------- Adding the new customer into the listbox and list: -----------------
+
+                customerList.Add(currentCustomer);
+                lstBxCstm.Items.Add(currentCustomer.CreateCustomer());
+
+                // --------------------- Updating statistics and reseting the form: ---------------------
+
+                updateStatistics();
+                txtbAccNo.Focus();
+                ResetFields();
             }
-
-        // ----------------------- Showing the new customer in a Showbox: -----------------------
-
-            MessageBox.Show(currentCustomer.ToString());
-
-        // ----------------- Adding the new customer into the listbox and list: -----------------
-            
-            customerList.Add(currentCustomer);
-            lstBxCstm.Items.Add(currentCustomer.CreateCustomer());
-
-        // --------------------- Updating statistics and reseting the form: ---------------------
-
-            updateStatistics();
-            txtbAccNo.Focus();
-            ResetFields();
         }
 
 

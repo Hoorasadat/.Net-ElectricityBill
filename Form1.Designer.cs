@@ -145,9 +145,9 @@
             this.label4.Location = new System.Drawing.Point(13, 203);
             this.label4.Name = "label4";
             this.label4.Padding = new System.Windows.Forms.Padding(9);
-            this.label4.Size = new System.Drawing.Size(199, 39);
+            this.label4.Size = new System.Drawing.Size(174, 39);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Customer Usage(kwh):";
+            this.label4.Text = "Power Usage(kwh):";
             // 
             // groupBox1
             // 

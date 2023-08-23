@@ -44,7 +44,6 @@
             this.addCrtBtn = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.removeBtn = new System.Windows.Forms.Button();
-            this.lstBxCstm = new System.Windows.Forms.ListBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtbAvgBill = new System.Windows.Forms.TextBox();
             this.txtbNoCstm = new System.Windows.Forms.TextBox();
@@ -52,6 +51,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.lstView = new System.Windows.Forms.ListView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -235,8 +235,8 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.Window;
+            this.groupBox2.Controls.Add(this.lstView);
             this.groupBox2.Controls.Add(this.removeBtn);
-            this.groupBox2.Controls.Add(this.lstBxCstm);
             this.groupBox2.Location = new System.Drawing.Point(596, 149);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(603, 554);
@@ -256,17 +256,6 @@
             this.removeBtn.Text = "Remove Customer";
             this.removeBtn.UseVisualStyleBackColor = false;
             this.removeBtn.Click += new System.EventHandler(this.removeBtn_Click);
-            // 
-            // lstBxCstm
-            // 
-            this.lstBxCstm.BackColor = System.Drawing.SystemColors.Info;
-            this.lstBxCstm.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lstBxCstm.FormattingEnabled = true;
-            this.lstBxCstm.ItemHeight = 21;
-            this.lstBxCstm.Location = new System.Drawing.Point(17, 43);
-            this.lstBxCstm.Name = "lstBxCstm";
-            this.lstBxCstm.Size = new System.Drawing.Size(573, 445);
-            this.lstBxCstm.TabIndex = 0;
             // 
             // groupBox3
             // 
@@ -344,6 +333,16 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Number of customers processed:";
             // 
+            // lstView
+            // 
+            this.lstView.BackColor = System.Drawing.SystemColors.Info;
+            this.lstView.HideSelection = false;
+            this.lstView.Location = new System.Drawing.Point(21, 56);
+            this.lstView.Name = "lstView";
+            this.lstView.Size = new System.Drawing.Size(570, 416);
+            this.lstView.TabIndex = 9;
+            this.lstView.UseCompatibleStateImageBehavior = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -386,7 +385,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ListBox lstBxCstm;
         private System.Windows.Forms.Button removeBtn;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox txtbAvgBill;
@@ -400,6 +398,7 @@
         private System.Windows.Forms.TextBox txtbAccNo;
         private System.Windows.Forms.Button exitBtn;
         private System.Windows.Forms.Button resetBtn;
+        private System.Windows.Forms.ListView lstView;
     }
 }
 

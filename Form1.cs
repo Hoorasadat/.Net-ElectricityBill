@@ -29,6 +29,14 @@ namespace Lab_2
 
             customerList = new List<Customer>();
 
+            lstView.View = View.Details;
+
+            lstView.Columns.Add("        id        ", -2, HorizontalAlignment.Center);
+            lstView.Columns.Add(" First Name ", -2, HorizontalAlignment.Center);
+            lstView.Columns.Add(" Last Name ", - 2, HorizontalAlignment.Center);
+            lstView.Columns.Add(" Power usage ", -2, HorizontalAlignment.Center);
+            lstView.Columns.Add("Bill", -2, HorizontalAlignment.Center);
+
             ResetStatistics();
         }
 
@@ -85,7 +93,18 @@ namespace Lab_2
                 // ----------------- Adding the new customer into the listbox and list: -----------------
 
                 customerList.Add(currentCustomer);
-                lstBxCstm.Items.Add(currentCustomer.CreateCustomer());
+
+                string[] cutomerListItem = {
+                    currentCustomer.AccountNo.ToString(),
+                    currentCustomer.FirstName,
+                    currentCustomer.LastName,
+                    currentCustomer.PowerUsage.ToString(),
+                    currentCustomer.BillAmount.ToString(),
+                };
+
+                ListViewItem item = new ListViewItem(cutomerListItem);
+                lstView.Items.Add(item);
+                
 
                 // --------------------- Updating statistics and reseting the form: ---------------------
 
@@ -171,9 +190,9 @@ namespace Lab_2
 
             if (MessageBox.Show("Are you Sure?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                int index = lstBxCstm.SelectedIndex;
-                lstBxCstm.Items.RemoveAt(index);
-                customerList.RemoveAt(index);
+                int selectedIndex = lstView.SelectedIndices[0];
+                lstView.Items.RemoveAt(selectedIndex);
+                customerList.RemoveAt(selectedIndex);
                 updateStatistics();
             }
         }

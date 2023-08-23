@@ -16,8 +16,9 @@ namespace Lab_2
         // ------------------------------------- Properties: -------------------------------------
 
         public int AccountNo { get; }
-        string firstName;
-        string lastName;
+        public string FirstName { get; }
+        public string LastName { get; }
+
         private decimal powerUsage = 0;
         public decimal PowerUsage
         {
@@ -31,8 +32,8 @@ namespace Lab_2
         public Customer(int accNo, string fstNm, string lstNm, decimal pwrUsg)
         {
             AccountNo = accNo;
-            firstName = fstNm;
-            lastName = lstNm;
+            FirstName = fstNm;
+            LastName = lstNm;
             powerUsage = pwrUsg;
             BillAmount = CalculateCharge();
         }
@@ -46,8 +47,8 @@ namespace Lab_2
             int hashedValue = Math.Abs(uniqueId.GetHashCode());
 
             AccountNo = hashedValue;
-            firstName = fstNm;
-            lastName = lstNm;
+            FirstName = fstNm;
+            LastName = lstNm;
             powerUsage = pwrUsg;
             BillAmount = CalculateCharge();
         }
@@ -68,7 +69,7 @@ namespace Lab_2
         public override string ToString()
         {
             string billString = CalculateCharge().ToString("C");
-            return $"Add {firstName} {lastName} with account no. {AccountNo} and a bill of {billString}";
+            return $"Add {FirstName} {LastName} with account no. {AccountNo} and a bill of {billString}";
         }
 
 
@@ -77,7 +78,7 @@ namespace Lab_2
         public string CreateCustomer()
         {
             string billString = CalculateCharge().ToString("C");
-            return $"First Name: {firstName}, Last Name: {lastName}, Account #: {AccountNo}, Bill: ${billString}";
+            return $"First Name: {FirstName}, Last Name: {LastName}, Account #: {AccountNo}, Bill: ${billString}";
         }
 
     }
